@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends Actor
+public class Bullet extends Spaceship
 {
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
@@ -14,6 +14,19 @@ public class Bullet extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-    }    
+       setLocation(getX()  + speed, getY());
+       checkBoundaries();
+   }
+   
+   // Remove bullets they are off screen
+    public void checkBoundaries()
+   {
+       if (getX() == 600) 
+        {
+            getWorld().removeObject(this);
+        }
+   }
+    
+   // Set the speed of the bullet 
+   private int speed = 10;
 }

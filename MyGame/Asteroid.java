@@ -15,6 +15,14 @@ public class Asteroid extends Actor
     public void act() 
     {
       move(-5); 
+      remove();
     }  
     
+     private void remove()
+    {
+        if (getX() == 0) 
+        {
+            getWorld().removeObject(this);
+        }
+    }
 }

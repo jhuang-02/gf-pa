@@ -1,18 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Space here.
+ * This is where the battle take place
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author J.Huang 
+ * @version 1.0
  */
 public class Space extends World
 {
-
-    /**
-     * Constructor for objects of class Space.
-     * 
-     */
+    
+    // Set the area of the space and put the space ship into the world
     public Space()
     {    
         super(600, 400, 1); 
@@ -20,11 +17,14 @@ public class Space extends World
         addObject(spaceship, 50, 200);
     }
     
+    // create asteroid in the space
     public void act()
     {
         if (Greenfoot.getRandomNumber(100) < 1)
         {
             addObject(new Asteroid(), 779, Greenfoot.getRandomNumber(360));
         }
+        
+        
     }
 }

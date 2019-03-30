@@ -16,8 +16,10 @@ public class Spaceship extends Actor
     {
         checkKeyPress();
         checkCollision();
+        fireBullets();
     }  
     
+    // control the spaceship with keys
     private void checkKeyPress()
     {
         if (Greenfoot.isKeyDown("up")) 
@@ -29,14 +31,26 @@ public class Spaceship extends Actor
         {
             setLocation(getX(), getY()+4);
         }
+        
+        
     }
     
+    // If the spaceship collided with an asteroid, the game is over
     private void checkCollision()
     {
         if (isTouching(Asteroid.class)) 
         {
             
             Greenfoot.stop();
+        }
+    }
+    
+    // Make the spaceship fire bullets
+    private void fireBullets()
+    {
+        if(Greenfoot.isKeyDown("space")) 
+        {
+            getWorld().addObject(new Bullet(), getX(), getY());
         }
     }
 }

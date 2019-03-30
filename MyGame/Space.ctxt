@@ -1,9 +1,8 @@
 #BlueJ class context
 comment0.target=Space
-comment0.text=\n\ Write\ a\ description\ of\ class\ Space\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ This\ is\ where\ the\ battle\ take\ place\n\ \n\ @author\ J.Huang\ \n\ @version\ 1.0\n
 comment1.params=
 comment1.target=Space()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Space.\n\ \n
 comment2.params=
 comment2.target=void\ act()
 numComments=3
