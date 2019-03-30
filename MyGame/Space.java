@@ -15,8 +15,16 @@ public class Space extends World
      */
     public Space()
     {    
-        super(400, 600, 1); 
+        super(600, 400, 1); 
         Spaceship spaceship = new Spaceship();
-        addObject(spaceship, 200, 550);
+        addObject(spaceship, 50, 200);
+    }
+    
+    public void act()
+    {
+        if (Greenfoot.getRandomNumber(100) < 1)
+        {
+            addObject(new Asteroid(), 779, Greenfoot.getRandomNumber(360));
+        }
     }
 }

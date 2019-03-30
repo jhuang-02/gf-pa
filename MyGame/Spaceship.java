@@ -20,14 +20,14 @@ public class Spaceship extends Actor
     
     private void checkKeyPress()
     {
-        if (Greenfoot.isKeyDown("left")) 
+        if (Greenfoot.isKeyDown("up")) 
         {
-            setLocation(getX()-4, getY());
+            setLocation(getX(), getY()-4);
         }
         
-        if (Greenfoot.isKeyDown("right")) 
+        if (Greenfoot.isKeyDown("down")) 
         {
-            setLocation(getX()+4, getY());
+            setLocation(getX(), getY()+4);
         }
     }
     
@@ -35,7 +35,7 @@ public class Spaceship extends Actor
     {
         if (isTouching(Asteroid.class)) 
         {
-            Greenfoot.playSound("game-over.wav");
+            
             Greenfoot.stop();
         }
     }
