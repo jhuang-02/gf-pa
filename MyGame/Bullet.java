@@ -13,15 +13,17 @@ public class Bullet extends Spaceship
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {
+   {
        setLocation(getX()  + speed, getY());
+       checkCollision();
        checkBoundaries();
+
    }
    
    // Remove bullets they are off screen
     public void checkBoundaries()
    {
-       if (getX() == 600) 
+       if (getX() == 599) 
         {
             getWorld().removeObject(this);
         }
@@ -29,4 +31,13 @@ public class Bullet extends Spaceship
     
    // Set the speed of the bullet 
    private int speed = 10;
+   
+   // Remove asteroid if touched and add points 
+   public void checkCollision()
+   {
+       if (isTouching(Asteroid.class)) 
+        {
+            removeTouching(Asteroid.class);
+        }
+   }
 }
