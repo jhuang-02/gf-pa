@@ -33,7 +33,7 @@ public class Space extends World
     
     private void putAsteroid()
     {
-        if (Greenfoot.getRandomNumber(100) < 1)
+        if (Greenfoot.getRandomNumber(100) < 3)
         {
             addObject(new Asteroid(), 779, Greenfoot.getRandomNumber(360));
         }

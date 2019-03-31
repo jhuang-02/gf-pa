@@ -20,7 +20,7 @@ public class Bullet extends Spaceship
 
    }
    
-   // Remove bullets they are off screen
+   // Remove bullets if they are off screen
     public void checkBoundaries()
    {
        if (getX() == 599) 
@@ -41,6 +41,10 @@ public class Bullet extends Spaceship
             removeTouching(Bullet.class);
         }
        
+       if (isTouching(Bullet.class)) 
+        {
+            removeTouching(Bullet.class);
+        }
        //world.changeScoreBy(10);
 
     }
