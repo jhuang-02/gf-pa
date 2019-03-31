@@ -25,7 +25,7 @@ public class Space extends World
     }
     
     // Show score on the screen
-    private int score;
+    public int score;
     private void showScore()
     {
         showText("Score: " + score, getWidth() - 500, 50);

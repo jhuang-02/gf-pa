@@ -34,10 +34,14 @@ public class Bullet extends Spaceship
    
    // Remove asteroid if touched and add points 
    public void checkCollision()
-   {
+    {
        if (isTouching(Asteroid.class)) 
         {
             removeTouching(Asteroid.class);
+            removeTouching(Bullet.class);
         }
-   }
+       
+       //world.changeScoreBy(10);
+
+    }
 }
