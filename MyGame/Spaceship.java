@@ -38,6 +38,7 @@ public class Spaceship extends Actor
     {
         if (isTouching(Asteroid.class)) 
         {           
+            getWorld().showText("GAMEOVER", 300, 200);
             Greenfoot.stop();
         }
     }
@@ -49,7 +50,7 @@ public class Spaceship extends Actor
         {
             getWorld().addObject(new Bullet(), getX(), getY());
             Space world = (Space) getWorld();
-            world.changeScoreBy(-1);
+            world.changeScoreBy(-2);
         }
     }
     

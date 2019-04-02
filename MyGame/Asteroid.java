@@ -26,6 +26,4 @@ public class Asteroid extends Actor
             getWorld().removeObject(this);
         }
     }
-    
-    
 }

@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Space extends World
 {
-    public boolean gameOn;
     public int score;
     
     // Set the area of the space and put the space ship into the world
