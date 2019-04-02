@@ -26,11 +26,19 @@ public class Space extends World
     
     // Show score on the screen
     public int score;
-    private void showScore()
+    public void showScore()
     {
         showText("Score: " + score, getWidth() - 500, 50);
     }
     
+    // Change score
+    public void changeScoreBy(int thisMuch)
+    {
+        score += thisMuch;
+        showScore();
+    }
+    
+    //Generate new asteroid automaticly
     private void putAsteroid()
     {
         if (Greenfoot.getRandomNumber(100) < 3)
@@ -38,4 +46,5 @@ public class Space extends World
             addObject(new Asteroid(), 779, Greenfoot.getRandomNumber(360));
         }
     }
+    
 }

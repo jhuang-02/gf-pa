@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Spaceship here.
+ * The battleship
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author J.Huang
+ * @version 1.0
  */
 public class Spaceship extends Actor
 {
@@ -30,17 +30,14 @@ public class Spaceship extends Actor
         if (Greenfoot.isKeyDown("down")) 
         {
             setLocation(getX(), getY()+4);
-        }
-        
-        
+        }                
     }
     
     // If the spaceship collided with an asteroid, the game is over
     private void checkCollision()
     {
         if (isTouching(Asteroid.class)) 
-        {
-            
+        {           
             Greenfoot.stop();
         }
     }

@@ -14,11 +14,11 @@ public class Asteroid extends Actor
      */
      public void act() 
     {
-
       move(-5); 
       remove();
     }  
     
+    // remove asteroid when it is out of the screen
      private void remove()
     {
         if (getX() == 0) 

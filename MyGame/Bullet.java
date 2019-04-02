@@ -6,18 +6,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends Spaceship
+public class Bullet extends Actor
 {
     /**
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-   {
+    {
        setLocation(getX()  + speed, getY());
        checkCollision();
        checkBoundaries();
-
+       
    }
    
    // Remove bullets if they are off screen
@@ -39,13 +39,14 @@ public class Bullet extends Spaceship
         {
             removeTouching(Asteroid.class);
             removeTouching(Bullet.class);
+            Space world = (Space) getWorld();
+            world.changeScoreBy(10);
         }
        
        if (isTouching(Bullet.class)) 
         {
             removeTouching(Bullet.class);
         }
-       //world.changeScoreBy(10);
-
     }
+    
 }
