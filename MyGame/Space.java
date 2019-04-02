@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Space extends World
 {
+    public boolean gameOn;
+    public int score;
     
     // Set the area of the space and put the space ship into the world
     public Space()
@@ -22,13 +24,13 @@ public class Space extends World
     {
         putAsteroid();
         showScore();
+        changeScoreBy(1);
     }
     
     // Show score on the screen
-    public int score;
     public void showScore()
     {
-        showText("Score: " + score, getWidth() - 500, 50);
+        showText("Score: " + score, 100, 50);
     }
     
     // Change score
@@ -47,4 +49,5 @@ public class Space extends World
         }
     }
     
+   
 }

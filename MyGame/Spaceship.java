@@ -42,12 +42,16 @@ public class Spaceship extends Actor
         }
     }
     
-    // Make the spaceship fire bullets
+    // Make the spaceship fire bullets, each bullet would cost you 1 point
     private void fireBullets()
     {
         if(Greenfoot.isKeyDown("space")) 
         {
             getWorld().addObject(new Bullet(), getX(), getY());
+            Space world = (Space) getWorld();
+            world.changeScoreBy(-1);
         }
     }
+    
+    
 }
