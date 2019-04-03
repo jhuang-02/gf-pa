@@ -38,9 +38,9 @@ public class Bullet extends Actor
     {
        if (isTouching(Asteroid.class)) 
         {
-            removeTouching(Asteroid.class);
+            removeTouching(Asteroid.class);           
             Space world = (Space) getWorld();
-            world.changeScoreBy(20);
+            world.changeScoreBy(30);
         }
        
        if (isTouching(Bullet.class)) 
