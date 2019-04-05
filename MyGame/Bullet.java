@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * Bullet 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @J.Huang
+ * @version 1.0
  */
 public class Bullet extends Actor
 {

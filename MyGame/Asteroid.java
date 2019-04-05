@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Asteroid here.
+ * The Asteroid
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author J.Huang
+ * @version 1.0
  */
 public class Asteroid extends Actor
 {
@@ -27,7 +27,5 @@ public class Asteroid extends Actor
             world.changeScoreBy(-20);
             getWorld().removeObject(this);
         }
-    }
-    
-    
+    }        
 }

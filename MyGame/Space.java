@@ -47,7 +47,5 @@ public class Space extends World
         {
             addObject(new Asteroid(), 779, Greenfoot.getRandomNumber(360));
         }
-    }
-    
-
+    }    
 }
