@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Space extends World
 {
     public int score;
+    private GreenfootSound bullet;
     
     // Set the area of the space and put the space ship into the world
     public Space()
@@ -16,6 +17,7 @@ public class Space extends World
         super(600, 400, 1); 
         Spaceship spaceship = new Spaceship();
         addObject(spaceship, 50, 200);
+
     }
     
     // create asteroid in the space
@@ -48,5 +50,5 @@ public class Space extends World
         }
     }
     
-   
+
 }

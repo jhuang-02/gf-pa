@@ -15,7 +15,7 @@ public class Asteroid extends Actor
      public void act() 
     {
       move(-5); 
-      remove();
+      remove();      
     }  
 
     // remove asteroid when it is out of the screen
@@ -28,4 +28,6 @@ public class Asteroid extends Actor
             getWorld().removeObject(this);
         }
     }
+    
+    
 }

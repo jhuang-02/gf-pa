@@ -12,13 +12,14 @@ public class Bullet extends Actor
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-   
+
    
     public void act() 
-    {
+   {
        setLocation(getX()  + speed, getY());
        checkCollision();
        checkBoundaries();
+       Greenfoot.playSound("EnergyGun.wav");
    }
    
    // Remove bullets if they are off screen
@@ -41,12 +42,7 @@ public class Bullet extends Actor
             removeTouching(Asteroid.class);           
             Space world = (Space) getWorld();
             world.changeScoreBy(30);
-        }
-       
-       if (isTouching(Bullet.class)) 
-        {
-            removeTouching(Bullet.class);
-        }
+        }              
     }
-    
+      
 }

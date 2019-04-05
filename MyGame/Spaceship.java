@@ -12,12 +12,35 @@ public class Spaceship extends Actor
      * Act - do whatever the Spaceship wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private int gunReloadTime;              
+    private int reloadDelayCount;           
+    private int shotsFired; 
+    
+    public Spaceship()
+    {
+        gunReloadTime = 5;
+        reloadDelayCount = 0;
+        shotsFired = 0;
+    }
+    
     public void act() 
     {
         checkKeyPress();
         checkCollision();
-        fireBullets();
+        reloadDelayCount++;
     }  
+    
+    // count how many bullets are fired 
+    public int getShotsFired()
+    {
+        return shotsFired;
+    }
+    
+    // set reload to avoid rapid fire
+    public void setGunReloadTime(int reloadTime)
+    {
+        gunReloadTime = reloadTime;
+    }
     
     // control the spaceship with keys
     private void checkKeyPress()
@@ -30,7 +53,12 @@ public class Spaceship extends Actor
         if (Greenfoot.isKeyDown("down")) 
         {
             setLocation(getX(), getY()+4);
-        }                
+        }  
+        
+        if(Greenfoot.isKeyDown("space")) 
+        {
+            fire();
+        }   
     }
     
     // If the spaceship collided with an asteroid, the game is over
@@ -43,12 +71,14 @@ public class Spaceship extends Actor
         }
     }
     
-    // Make the spaceship fire bullets, each bullet would cost you 1 point
-    private void fireBullets()
+    // Make the spaceship fire bullets, each bullet would cost you 2 points
+    private void fire()
     {
-        if(Greenfoot.isKeyDown("space")) 
+        if (reloadDelayCount >= gunReloadTime)
         {
             getWorld().addObject(new Bullet(), getX(), getY());
+            shotsFired++;
+            reloadDelayCount = 0;   
             Space world = (Space) getWorld();
             world.changeScoreBy(-2);
         }
