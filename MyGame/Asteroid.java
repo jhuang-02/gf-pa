@@ -14,7 +14,7 @@ public class Asteroid extends Actor
      */
      public void act() 
     {
-      move(-5); 
+      move(-6); 
       remove();      
     }  
 

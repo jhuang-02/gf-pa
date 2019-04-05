@@ -15,9 +15,10 @@ public class Spaceship extends Actor
     private int gunReloadTime;              
     private int reloadDelayCount;           
     
+    // Set the initial reload time and delay count
     public Spaceship()
     {
-        gunReloadTime = 5;
+        gunReloadTime = 8;
         reloadDelayCount = 0;
     }
     
@@ -27,10 +28,8 @@ public class Spaceship extends Actor
         checkCollision();
         reloadDelayCount++;
     }  
-    
-    
-    
-    // set reload to avoid rapid fire
+        
+    // set reload time to avoid rapid fire
     public void setGunReloadTime(int reloadTime)
     {
         gunReloadTime = reloadTime;
