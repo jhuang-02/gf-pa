@@ -14,13 +14,11 @@ public class Spaceship extends Actor
      */
     private int gunReloadTime;              
     private int reloadDelayCount;           
-    private int shotsFired; 
     
     public Spaceship()
     {
         gunReloadTime = 5;
         reloadDelayCount = 0;
-        shotsFired = 0;
     }
     
     public void act() 
@@ -30,11 +28,7 @@ public class Spaceship extends Actor
         reloadDelayCount++;
     }  
     
-    // count how many bullets are fired 
-    public int getShotsFired()
-    {
-        return shotsFired;
-    }
+    
     
     // set reload to avoid rapid fire
     public void setGunReloadTime(int reloadTime)
@@ -77,7 +71,6 @@ public class Spaceship extends Actor
         if (reloadDelayCount >= gunReloadTime)
         {
             getWorld().addObject(new Bullet(), getX(), getY());
-            shotsFired++;
             reloadDelayCount = 0;   
             Space world = (Space) getWorld();
             world.changeScoreBy(-2);

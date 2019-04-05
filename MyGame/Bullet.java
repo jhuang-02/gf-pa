@@ -16,18 +16,18 @@ public class Bullet extends Actor
    
     public void act() 
    {
-       setLocation(getX()  + speed, getY());
-       checkCollision();
-       checkBoundaries();
        Greenfoot.playSound("EnergyGun.wav");
+       setLocation(getX()  + speed, getY());
+       checkCollision();       
+       checkBoundaries();
    }
    
    // Remove bullets if they are off screen
     public void checkBoundaries()
-   {
+   { 
        if (getX() == 599) 
         {
-            getWorld().removeObject(this);
+          getWorld().removeObject(this);
         }
    }
     
@@ -39,7 +39,7 @@ public class Bullet extends Actor
     {
        if (isTouching(Asteroid.class)) 
         {
-            removeTouching(Asteroid.class);           
+            removeTouching(Asteroid.class); 
             Space world = (Space) getWorld();
             world.changeScoreBy(30);
         }              
