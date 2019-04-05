@@ -17,7 +17,6 @@ public class Space extends World
         super(600, 400, 1); 
         Spaceship spaceship = new Spaceship();
         addObject(spaceship, 50, 200);
-
     }
     
     // create asteroid in the space

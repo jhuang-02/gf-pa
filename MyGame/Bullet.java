@@ -54,10 +54,10 @@ public class Bullet extends Actor
         if (isTouching(Asteroid.class)) 
         {
             removeTouching(Asteroid.class); 
+            Greenfoot.playSound("Explosion.wav");
             Space world = (Space) getWorld();
             world.changeScoreBy(30);
             world.removeObject(this);
         }
-
     }
 }

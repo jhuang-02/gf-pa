@@ -74,7 +74,5 @@ public class Spaceship extends Actor
             Space world = (Space) getWorld();
             world.changeScoreBy(-2);
         }
-    }
-    
-    
+    }        
 }
